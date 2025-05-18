@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Benim 2. El Ürünlerim</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+      background-size: cover;
+      z-index: -1;
+      opacity: 0.15;
+    }
+    #lightbox {
+      position: fixed;
+      display: none;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    #lightbox img {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 20px #000;
+    }
+    .lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 3rem;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      padding: 0 1rem;
+      background: rgba(0,0,0,0.3);
+      border-radius: 50%;
+      transition: background 0.3s;
+    }
+    .lightbox-arrow:hover {
+      background: rgba(0,0,0,0.7);
+    }
+    #arrow-left { left: 2rem; }
+    #arrow-right { right: 2rem; }
+    #lightbox-close {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      background: rgba(0,0,0,0.3);
+      border-radius: 50%;
+      padding: 0 0.5rem;
+      transition: background 0.3s;
+    }
+    #lightbox-close:hover {
+      background: rgba(0,0,0,0.7);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <header class="text-center py-8 bg-white bg-opacity-90 shadow">
+    <h1 class="text-3xl font-bold text-blue-600">2. El Ürünlerim</h1>
+    <p class="text-gray-500">Satıştaki güncel ürünlerime göz atın</p>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
+      <img
+        src="images/passat1.jpg"
+        alt="passat1"
+        class="w-full h-48 object-cover rounded-t-lg cursor-pointer"
+        data-images='[
+          "images/passat1.jpg",
+          "images/passat2.jpg",
+          "images/passat3.jpg",
+          "images/passat4.jpg",
+          "images/passat4.jpg" 
+        ]'
+      />
+      <div class="p-4">
+        <h2 class="text-xl font-semibold">Passat Bardaklık</h2>
+        <p class="text-gray-600 text-sm">2007 Model passat orjinal çıkma bardaklık</p>
+        <p class="mt-2 font-bold text-blue-600">₺1000</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
+      <img
+        src="images/stolz1.jpg"
+        alt="stolz bisiklet"
+        class="w-full h-48 object-cover rounded-t-lg cursor-pointer"
+        data-images='[
+          "images/stolz1.jpg",
+          "images/stolz2.jpg",
+          "images/stolz3.jpg",
+          "images/stolz4.jpg"     
+        ]'
+      />
+      <div class="p-4">
+        <h2 class="text-xl font-semibold">Stolz Vitesli Bisiklet</h2>
+        <p class="text-gray-600 text-sm">Az kullanılmış stolz vitesli bisiklet</p>
+        <p class="mt-2 font-bold text-blue-600">₺4.000</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
+      <img
+        src="images/dinamo1.jpg"
+        alt="dinamo1"
+        class="w-full h-48 object-cover rounded-t-lg cursor-pointer"
+        data-images='[
+          "images/dinamo1.jpg",
+          "images/dinamo2.jpg",
+          "images/dinamo3.jpg",
+          "images/dinamo4.jpg"    
+        ]'
+      />
+      <div class="p-4">
+        <h2 class="text-xl font-semibold">2005 Santa fe Şarj Dinamosu</h2>
+        <p class="text-gray-600 text-sm">2005 model 2.0 CRDİ orjinal çıkma parça</p>
+        <p class="mt-2 font-bold text-blue-600">₺3000</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
+      <img
+        src="images/rotring1.jpg"
+        alt="rotring"
+        class="w-full h-48 object-cover rounded-t-lg cursor-pointer"
+        data-images='[
+          "images/rotring1.jpg",
+          "images/rotring2.jpg"              
+        ]'
+      />
+      <div class="p-4">
+        <h2 class="text-xl font-semibold">Rotring College Set</h2>
+        <p class="text-gray-600 text-sm">Hiç kullanılmamış Rotring College Set</p>
+        <p class="mt-2 font-bold text-blue-600">₺1500</p>
+      </div>
+    </div>
+    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
+      <img
+        src="images/faber1.jpg"
+        alt="rotring"
+        class="w-full h-48 object-cover rounded-t-lg cursor-pointer"
+        data-images='[
+          "images/faber1.jpg",
+          "images/faber2.jpg"              
+        ]'
+      />
+      <div class="p-4">
+        <h2 class="text-xl font-semibold">Faber-Castell TG1 College Set</h2>
+        <p class="text-gray-600 text-sm">Hiç kullanılmamış Faber-Castell TG1 College Set </p>
+        <p class="mt-2 font-bold text-blue-600">₺1500</p>
+      </div>
+    </div>
+    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
+      <img
+        src="images/ayna1.jpg"
+        alt="rotring"
+        class="w-full h-48 object-cover rounded-t-lg cursor-pointer"
+        data-images='[
+          "images/ayna1.jpg",
+          "images/ayna2.jpg",
+          "images/ayna3.jpg"               
+        ]'
+      />
+      <div class="p-4">
+        <h2 class="text-xl font-semibold">Doğan SLX Ayna</h2>
+        <p class="text-gray-600 text-sm">Orjinal Doğan SLX çıkma aynası </p>
+        <p class="mt-2 font-bold text-blue-600">₺600</p>
+      </div>
+    </div>
+
+  </main>
+
+  <div id="lightbox" class="flex">
+    <span id="lightbox-close">&times;</span>
+    <span id="arrow-left" class="lightbox-arrow">&#10094;</span>
+    <img src="" alt="Ürün Görseli" />
+    <span id="arrow-right" class="lightbox-arrow">&#10095;</span>
+  </div>
+
+  <section class="text-center py-10 bg-white bg-opacity-90 mt-10">
+    <h3 class="text-xl font-semibold mb-4">İletişim</h3>
+    <p class="mb-2">E-posta: <a href="mailto:ahmet27m@hotmail.com" class="text-blue-500">ahmet27m@hotmail.com</a></p>
+    <a href="https://wa.me/905555555555" target="_blank" class="inline-block mt-2 px-6 py-2 bg-green-500 text-white rounded shadow hover:bg-green-600 transition">WhatsApp'tan Ulaş</a>
+  </section>
+
+  <footer class="text-center text-sm text-gray-500 py-4 border-t bg-white bg-opacity-90">
+    © 2025 Tüm Hakları Saklıdır.
+  </footer>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    const closeBtn = document.getElementById('lightbox-close');
+    const leftArrow = document.getElementById('arrow-left');
+    const rightArrow = document.getElementById('arrow-right');
+
+    let currentImages = [];
+    let currentIndex = 0;
+
+    document.querySelectorAll('main img').forEach(img => {
+      img.addEventListener('click', () => {
+        const images = JSON.parse(img.getAttribute('data-images'));
+        currentImages = images;
+        currentIndex = 0;
+        lightboxImg.src = currentImages[currentIndex];
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      lightboxImg.src = '';
+    });
+
+    leftArrow.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+      lightboxImg.src = currentImages[currentIndex];
+    });
+
+    rightArrow.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % currentImages.length;
+      lightboxImg.src = currentImages[currentIndex];
+    });
+
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+        lightboxImg.src = '';
+      }
+    });
+
+    document.addEventListener('keydown', e => {
+      if (lightbox.style.display === 'flex') {
+        if (e.key === 'ArrowLeft') leftArrow.click();
+        else if (e.key === 'ArrowRight') rightArrow.click();
+        else if (e.key === 'Escape') closeBtn.click();
+      }
+    });
+  </script>
+</body>
+</html>
